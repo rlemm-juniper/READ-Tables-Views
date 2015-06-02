@@ -1,0 +1,16 @@
+RouteTable:
+  rpc: get-route-information
+  args_key: destination
+  item: route-table/rt
+  key: rt-destination
+  view: RouteTableView
+RouteTableView:
+  groups:
+    entry: rt-entry
+  fields_entry:
+    # fields taken from the group 'entry'
+    protocol: protocol-name
+    preference: preference
+    to: to
+    via: nh/via | nh/nh-local-interface
+    age: { age/@seconds : int }"""
